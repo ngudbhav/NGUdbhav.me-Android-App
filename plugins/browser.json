@@ -1,0 +1,46 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-battery-status": {
+      "PACKAGE_NAME": "NGUdbhav"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "NGUdbhav"
+    },
+    "cordova-plugin-media-capture": {
+      "PACKAGE_NAME": "NGUdbhav"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "NGUdbhav"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "NGUdbhav"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "NGUdbhav"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "NGUdbhav"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "NGUdbhav"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "NGUdbhav"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "NGUdbhav"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "NGUdbhav"
+    }
+  }
+}

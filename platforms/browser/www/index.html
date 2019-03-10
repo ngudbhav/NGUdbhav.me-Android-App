@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="css/calender.css" />
+    <link rel="stylesheet" type="text/css" href="css/home.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/fullpage.js"></script>
+    <script type="text/javascript" src="js/popper.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <title>NGUdbhav  ||  Udbhav Gambhir</title>
+</head>
+
+<body>
+    <script>
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady(){
+            console.log('ready');
+            window.open = cordova.InAppBrowser.open;
+        }
+                $(document).ready(function(){
+                    $('[data-toggle="tooltip"]').tooltip();   
+                    $('#fullpage').fullpage({
+                        scrollingSpeed: 1000,
+                        normalScrollElements: '.panel, .calendar',
+                        recordHistory: false,
+                        menu: '#menu'
+                    });
+                    $(".loader").fadeOut('slow', function() {
+                        $("#fullbody").fadeIn('slow');
+                        window.onclick = function (e) {
+                            if (e.target.localName == 'a') {
+                                console.log('a tag clicked!');
+                                console.log(e.target.href);
+                                if(e.target.href){
+                                    e.preventDefault();
+                                    var ref = window.open(e.target.href, "_blank");
+                                    ref.addEventListener('loadstart', function(){console.log('hey');});
+                                }
+                            }
+                        }
+                    });
+                    $('[data-toggle="tooltip"]').tooltip();
+                });
+                function onSubmit() {
+                    document.getElementById("mail").submit();
+                    console.log('done');
+                    alert('Successfully Sent');
+                }
+                $(document).keydown(function(event) {
+                    if(event.which === 9 || event.keyCode === 9){
+                        event.preventDefault();
+                    }
+                });
+            </script>
+    </head> 
+    <body class = "homepage" id = "bootstrap-override" style="background-color: rgb(40,40,40);">
+        <div class="row loader" style="height: 100%;">
+            <div class="col-sm-12" align="center" style="top: 30%;color: white;">
+                <img src="img/loader.gif" width="20%"><br>
+                <h1>
+                    Now Loading!
+                </h1>
+                <h1>
+                    Firing up graphics!
+                </h1>
+            </div>
+        </div>
+        <div class = "normal" id = "fullbody" style="display: none;">
+            <span class="glyphicon glyphicon-th-list" id="list" style="color: white;font-size: 40px;position: fixed;z-index: 20;align-self: flex-end;right: 2%;top: 1%;"></span>
+            <div id="options" style="display: none;color: white;background-color: rgb(200,200,200);">
+                <center>
+                    <div id="menu">
+                        <br><br>
+                        <h1><a class="intro">Home</a></h1>
+                        <h1><a class="schooling">Education</a></h1>
+                        <h1><a class="github">Contributions</a></h1>
+                        <h1><a class="social">Social Connection</a></h1>
+                        <h1><a class="contact">Contact</a></h1>
+                        <br><br>
+                    </div>
+                </center>
+            </div>
+            <div id = "fullpage">
+                <div class = "section active" id = "section0" style="color: white;">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <center>
+                                <h1 style="letter-spacing: 3px;"><br>Udbhav Gambhir</h1>
+                                <h3 class="college">Studying CSE <br> Jaypee Institute of Information Technology</h3>
+                                <h3>Noida, Delhi-NCR (201309)</h3>
+                            </center>
+                        </div>
+                        <div class="col-sm-5" id="dp">
+                            <img src="img/capture1.png" class="img-responsive" width="100%">
+                        </div>  
+                    </div>
+                    <center>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div>
+                                    <img src="img/scroll.gif"><br><p style = "font-size: 2rem;">Scroll Down SLOWLY!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </center> 
+                </div>
+                <div class = "section" id = "section1" style="color: white;">
+                    <div class = "slide" id = "school">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <center>
+                                    <ul style="list-style: none;padding-left: 0;">
+                                        <h3>
+                                            <li>
+                                                <div class="alert alert-success">
+                                                    Class 10th Completed from <strong><a href="http://www.nosegaypublicschool.com/" target="_blank">Nosegay Public School</a></strong>, Sri Ganganagar, with 10 CGPA.
+                                                </div>
+                                            </li><br>
+                                            <li>
+                                                <div class="alert alert-info">
+                                                    Class 12th Completed from <strong><a href="http://www.lavkushmodelschool.com/" target="_blank">Lav Kush Model School</a></strong>, Sri Ganganagar, with 84.8%.
+                                                </div>
+                                            </li><br>
+                                            <li>
+                                                <div class="alert alert-warning">
+                                                    Secured 35666 rank in <strong><a href="https://jeemain.nic.in/webinfo/Public/Home.aspx" target="_blank">JEE Mains</a></strong> with a score of 176.
+                                                </div>
+                                            </li><br>
+                                            <li>
+                                                <div class="alert alert-danger">
+                                                    Secured 12742 rank in <strong><a href="https://www.jeeadv.ac.in/" target="_blank">JEE Advanced  </a></strong> with a score of 103.
+                                                </div>
+                                            </li>
+                                        </h3>
+                                    </ul>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "slide" id = "computing" style="color: white;">
+                        <center>
+                            <div class="row">
+                                <div class="col-sm-4 col-xs-4">
+                                    <h1>Programming</h1>
+                                    <ul class="list-group" id="programming">
+                                        <li class="list-group-item list-group-item-success">C</li>
+                                        <li class="list-group-item list-group-item-info">C++</li>
+                                        <li class="list-group-item list-group-item-warning" data-toggle="tooltip" title="AWT, Swing, JDBC, Mailer, Threads">JAVA</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-4 col-xs-4" id="webdiv">
+                                    <h1>Web</h1>
+                                    <ul class="list-group" id="web">
+                                        <li class="list-group-item list-group-item-success">HTML</li>
+                                        <li class="list-group-item list-group-item-info">CSS</li>
+                                        <li class="list-group-item list-group-item-warning">JAVASCRIPT</li>
+                                        <li class="list-group-item list-group-item-danger">jQuery</li>
+                                        <li class="list-group-item list-group-item-success">BOOTSTRAP</li>
+                                        <li class="list-group-item list-group-item-info">PHP</li>
+                                        <li class="list-group-item list-group-item-warning" data-toggle="tooltip" title="Express, Passport, Socket.IO, Mailer, Session etc.">NODE.JS</li>
+                                        <li class="list-group-item list-group-item-danger">AJAX</li>
+                                        <li class="list-group-item list-group-item-success">HandleBars</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-4 col-xs-4">
+                                    <h1>Other</h1>
+                                    <ul class="list-group" id="other">
+                                        <li class="list-group-item list-group-item-success">MySQL</li>
+                                        <li class="list-group-item list-group-item-info">MongoDB</li>
+                                        <li class="list-group-item list-group-item-warning">Heroku CLI</li>
+                                        <li class="list-group-item list-group-item-danger">AWS</li>
+                                        <li class="list-group-item list-group-item-success">GIT</li>
+                                        <li class="list-group-item list-group-item-info" data-toggle="tooltip" title="Software technician -p">Technician</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+                <div class = "section" id = "section2" style="color: white;">
+                    <div class="slide" id="repos">
+                        <center>
+                            <div class="panel-group" style="width: 80%;">
+                                <div class="panel panel-primary" style="vertical-align: middle;height: 70vh;overflow: auto;">
+                                    <div class="panel-heading">
+                                        My Created GitHub Repositories (Github Status: Connected!)
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="list-group" id="repositories" style="color: black;">
+                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                    <div class="slide" id="calender">
+                        <div class="calendar" style="background-color: white;color: black;width: 80%;overflow: auto;">
+
+                        </div>
+                    </div>
+                </div>
+                <div class = "section" id = "section3" style="color: white;">
+                    <center>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h1>
+                                    Contact me using Social Networks!
+                                </h1><br>
+                                <div class = "ngudbhav">
+                                    <h3>
+                                        Use "NGUdbhav" to connect on apps such as Snapchat, Github, Line, WeChat, Hangouts. The same can be used to access HackerRank, CodeChef and the like profiles.
+                                    </h3>
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-3">
+                                <a href = "https://www.facebook.com/ngudbhav" target="_blank"><span class = "animate"><img src = "img/fb.png" class = "image-responsive zoom x" width="100%"></span></a>
+                            </div>
+                            <div class="col-sm-3 col-xs-3">
+                                <a href = "https://www.twitter.com/ngudbhav" target="_blank"><span class = "animate"><img src = "img/twitter.png" class = "image-responsive zoom x" width="100%"></span></a>
+                            </div>
+                            <div class="col-sm-3 col-xs-3">
+                                <a href = "https://www.instagram.com/ngudbhav" target = "_blank"><span class = "animate"><img src = "img/insta.png" class = "image-responsive zoom x" width="100%"></span></a>
+                            </div>
+                            <div class="col-sm-3 col-xs-3">
+                                <a href = "https://ngudbhavcorp.blogspot.com" target = "_blank"><span class = "animate"><img src = "img/blog.png" class = "image-responsive zoom x" width="100%"></span></a>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h3>Got so many ways to do it!</h3>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+                <div class = "section" id = "section4">
+                    <div class="row" style="background-color: white;">
+                        <center>
+                            <div class="col-sm-3">
+                                <div>
+                                    <img src = "img/giphy.gif" class="cutegif" />
+                                </div>
+                            </div>
+                        </center>
+                        <div class="col-sm-6">
+                            <form method="POST" action="https://www.ngudbhav.me/sending" id="mail" style="padding: 3%;">
+                                <div class="input-control modern text iconic">
+                                    <input type="text" required name = "name" placeholder="Your Name" autocomplete="name">
+                                </div><br><br>
+                                <div class="input-control modern email iconic" data-toggle="tooltip" title="I won't spam you!">
+                                    <input type="email" required name="email" placeholder="Your E-Mail" autocomplete="email">
+                                </div><br><br>
+                                <div class="input-control textarea">
+                                    <textarea placeholder="Input your message" style = "resize: none;" required name="bodymsg" cols="50" rows="4"></textarea>
+                                </div><br><br>
+                                <div>
+                                    <button class="btn btn-danger" onclick="onSubmit();">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm-3">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <center>
+                            <div class="col-sm-12">
+                                <div class = "copyright" style = "background-color: black;color:white;font-size: 1.5vw;">
+                                    <label>
+                                        Deployed on <a href="https://aws.amazon.com" target="_blank"><img src="img/aws.png"></a>. Fork this project on <a href="https://github.com/ngudbhav/ngudbhav.github.io" target="_blank">GitHub</a>.
+                                    </label><br>
+                                    <label>
+                                        Created, Developed and now Maintained by  © <a href = "https://www.Github.com/ngudbhav" target = "_blank">Udbhav Gambhir (@NGUdbhav)</a>
+                                    </label>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var button = 0;
+            $('.glyphicon').click(function() {
+                if(button === 0){
+                    $(this).css({
+                        transform: 'rotate(180deg)',
+                        opacity: '0',
+                        transition: 'transform 580ms ease-in, opacity 580ms'
+                    });
+                    button = 1;
+                    setTimeout(function(){changecross();}, 600);
+                }
+                else{
+                    $(this).css({
+                        transform: 'rotate(0deg)',
+                        opacity: '0',
+                        transition: 'transform 580ms ease-in, opacity 580ms'
+                    });
+                    button = 0;
+                    setTimeout(function(){restorecross();}, 600);
+                }
+            });
+            $('#menu').find('a').click(function() {
+                var x = $(this).attr('class');
+                $('#list').css({
+                    transform: 'rotate(0deg)',
+                    opacity: '0',
+                    transition: 'transform 580ms ease-in, opacity 580ms'
+                });
+                button = 0;
+                setTimeout(function(){restorecross();}, 600);
+                setTimeout(function(){console.log(x);$.fn.fullpage.moveTo(x);}, 1800);
+            });
+            function changecross(){
+                $("#list").attr('class', 'glyphicon glyphicon-remove-circle');
+                $('#list').css('opacity', '1');
+                $("#fullpage").hide('slow', function() {
+                    $("#options").show('slow');
+                });
+            }
+            function restorecross(){
+                $("#list").attr('class', 'glyphicon glyphicon-th-list');
+                $('#list').css('opacity', '1');
+                $("#options").hide('slow', function() {
+                    $("#fullpage").show('fast');
+                });
+            }
+        </script>
+        <script type="text/JAVASCRIPT" src="js/gh.js"></script>
+        <script src="js/calender.js"></script>
+        <script>
+            (function () {
+                var gh = new GitHub();
+                gh.get('users/ngudbhav/repos', function(err, repos){
+                    if(err) throw err;
+                    else{
+                        for (var i = 0; i <repos.length; i++) {
+                            if(repos[i].license){
+                                $('#repositories').append('<a class="list-group-item" href="'+repos[i].html_url+'" target="_blank">'+repos[i].name+' ==> last Updated on:'+new Date(repos[i].updated_at)+'</a><BR>');
+                            }
+                        }
+                    }
+                });
+            })();
+        </script>
+        <script>
+            GitHubCalendar(".calendar", "ngudbhav");
+        </script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+</html>

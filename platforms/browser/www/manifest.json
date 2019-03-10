@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "NGUdbhav",
+  "short_name": "NGUdbhav",
+  "version": "NGUdbhav",
+  "description": "A Test Application made for learning purposes.",
+  "author": "Udbhav Gambhir",
+  "icons": [],
+  "start_url": "index.html"
+}
