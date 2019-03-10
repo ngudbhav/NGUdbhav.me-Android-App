@@ -33,6 +33,9 @@
     },
     "cordova-plugin-vibration": {
       "PACKAGE_NAME": "NGUdbhav"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "NGUdbhav"
     }
   },
   "dependent_plugins": {

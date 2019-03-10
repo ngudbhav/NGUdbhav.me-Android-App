@@ -8,6 +8,7 @@
         Udbhav Gambhir
     </author>
     <content src="index.html" />
+    <allow-navigation href="*" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
