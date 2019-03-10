@@ -1,2 +1,5 @@
 # NGUdbhav.me-Android-App
-A Test application made solely for learning purpose
+
+Not a PWA!
+
+A Full Android App representation of my portfolio website <a href="https://www.ngudbhav.me">Visit me.</a>
